@@ -30,7 +30,7 @@ Future<InitContext> _context() async {
   final directories = await Future.wait([
     getApplicationSupportDirectory(),
     if (Platform.isAndroid)
-      getExternalStorageDirectory()
+      getTemporaryDirectory()
     else
       Future<Directory?>.value()
   ]);
